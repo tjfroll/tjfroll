@@ -1,0 +1,435 @@
+* {
+   margin: 0;
+   padding: 0;
+}
+
+body {
+   font-family: 'Palatino Linotype', Georgia, Times;
+   background-color: #9E937E;
+}
+
+p {
+   font-size: 1em;
+}
+
+h2 {
+   text-align: center;
+   font-size: 2.2em;
+}
+
+#tabs {
+   position: relative;
+   width: 850px;
+   margin-left: auto;
+   margin-right: auto;
+   margin-bottom: -.28em;
+   text-align: center;
+}
+
+
+.tab {
+   display: inline-block;
+   width: 17%;
+   position: relative;
+   background-color: #DDD1BC;
+   padding-top: .2em;
+   padding-bottom: .4em;
+   border-left: 1px solid #492F10;
+   border-right: 1px solid #492F10;
+   z-index: 0;
+   color: #000;
+   cursor: pointer;
+   text-decoration: none;
+   font-size: 1.4em;
+   font-weight: bold;
+}
+
+.tab:hover {
+   background-color: #FFEFFE;
+   border-color: #363636;
+}
+
+.focused {
+   z-index: 5;
+   background-color: #FFF;
+   border-left: .25em solid #492F10;
+   border-right: .25em solid #492F10;
+}
+
+.focused:hover {
+   background-color: #FFF;
+}
+
+#wrapper {
+   position: relative;
+   margin-left: auto;
+   margin-right: auto;
+   margin-bottom: 1em;
+   width: 850px;
+   border-radius: 5px;
+   border: .3em solid #492F10;
+   background-color: #FFF;
+}
+
+#content {
+   position: relative;
+   margin-left: auto;
+   margin-right: auto;
+   padding-top: 1em;
+   padding-bottom: 1em;
+   width: 90%;
+}
+
+#monogram {
+   font-size: 5em;
+   position: absolute;
+   background-color: transparent;
+   bottom: -.3em;
+   right: .2em;
+   color: #333;
+   opacity: .5;
+   letter-spacing: -.12em;
+   text-align: center;
+   user-select: none;
+   -webkit-user-select: none;  /* Chrome - Safari */
+   -moz-user-select: none;     /* Firefox */
+   -ms-user-select: none;      /* IE 10+ */
+   text-shadow: .01em .01em #000;
+   cursor: default;
+   font-smoothing: antialiased;
+   -webkit-font-smoothing: antialiased;
+}
+
+svg {
+   position: absolute;
+   top: 0;
+   left: 0;
+   height: 100%;
+}
+
+#contentLabel {
+   fill: #000;
+   opacity: .15;
+   font-size: 11em;
+   cursor: default;
+   font-smoothing: antialiased;
+   -webkit-font-smoothing: antialiased;
+   user-select: none;
+   -webkit-user-select: none;  /* Chrome - Safari */
+   -moz-user-select: none;     /* Firefox */
+   -ms-user-select: none;      /* IE 10+ */
+}
+
+h1 {
+   text-align: center;
+}
+
+p {
+   margin-top: 1em;
+   margin-bottom: 1em;
+   padding-left: 2em;
+   padding-right: 2em;
+}
+
+
+/* Sites */
+
+
+#sitesContent {
+   overflow: hidden;
+   position: relative;
+   z-index: 20;
+}
+
+#sitesContent hr {
+   height: .1em;
+   margin-top: 2em;
+   margin-bottom: 1em;
+   background-color: #492F10;
+   color: #492F10;
+   border-collapse: collapse;
+   border: none;
+}
+
+#sitesNav {
+   text-align: center;
+   color: #492F10;
+}
+
+#sitesNav a {
+   display: inline-block;
+   text-decoration: none;
+   color: #FFF;
+   background-color: #492F10;
+   padding: .5em;
+   box-shadow: -2px 2px 1px 1px #363636;
+   margin-right: .5em;
+   margin-left: .5em;
+   margin-top: 1em;
+}
+
+#sitesNav a:hover {
+   background-color: #DDD1BC;
+   color: #492F10;
+}
+
+.siteDetails {
+   margin-bottom: 3em;
+}
+
+.siteDetails p {
+   margin-bottom: 3em;
+}
+
+.siteImages {
+   text-align: center;
+}
+
+.siteImages img {
+   box-shadow: 0px 0px 8px 5px #363636
+}
+
+h6 {
+   text-align: right;
+}
+
+/* Art */
+
+#lightbox {
+   position: fixed;
+   z-index: 40;
+   top: 0;
+   left: 0;
+   display: none;
+   min-width: 100%;
+   min-height: 100%;
+   text-align: center;
+   overflow: hidden;
+   background-color: transparent;
+}
+
+#lightboxTrans {
+   position: fixed;
+   z-index: 50;
+   width: 100%;
+   height: 100%;
+   opacity: .6;
+   background-color: #000;
+}
+
+#artLoading {
+   position: fixed;
+   top: 25%;
+   width: 100%;
+   text-align: center;
+   font-family: 'Courier New';
+   font-size: 3em;
+   z-index: 55;
+   color: #FFF;
+   font-weight: bold;
+   display: none;
+}
+
+#artFull {
+   position: relative;
+   text-align: center;
+   z-index: 60;
+   top: 1em;
+   border: .5em solid #000;
+   border-top-left-radius: 10px;
+   border-top-right-radius: 10px;
+}
+
+#artDescription {
+   display: none;
+   position: absolute;
+   padding: 15px;
+   color: #FFF;
+   text-align: center;
+   top: 1.5em;
+   font-size: .9em;
+   font-family: 'Palatino Linotype', Georgia, Times;
+   z-index: 70;
+   left: 50%;
+   background-color: #000;
+   opacity: .8;
+   cursor: pointer;
+}
+
+#artDetails {
+   display: none;
+   position: relative;
+   text-align: center;
+   z-index: 60;
+   top: .5em;
+   height: 1em;
+   margin-left: auto;
+   margin-right: auto;
+   border: .5em solid #000;
+   border-bottom-left-radius: 10px;
+   border-bottom-right-radius: 10px;
+   background: #000;
+}
+
+#artDetails p {
+   color: #FFF;
+   display: inline-block;
+   font-size: 1.2em;
+   font-family: 'Courier New';
+   margin: 0;
+   padding-left: .2em;
+   padding-right: .2em;
+   clear: none;
+   font-size: .8em;
+}
+
+#artDetails a {
+   color: #FFF;
+   text-decoration: none;
+}
+
+#artClose {
+   cursor: pointer;
+}
+
+#artGallery {
+   text-align: center;
+}
+
+
+.artThumb {
+   margin: .8em;
+   border: .1em solid #000;
+   vertical-align: middle;
+   box-shadow: -4px 4px 4px #797979;
+}
+
+.artThumb:hover {
+   cursor: pointer;
+   border-color: brown;
+}
+
+
+
+/* Resume */
+
+#resumeContent #download {
+   font-size: .9em;
+   text-align: right;
+}
+
+#resumeContent #name {
+   font-size: 30pt;
+   font-variant: small-caps;
+   font-weight: bold;
+   text-align: center;
+}
+
+#resumeContent #statement {
+   width: 92%;
+   margin-left: auto;
+   margin-right: auto;
+   line-height: 1.3em;
+   font-size: 12pt;
+   font-variant: normal;
+   text-align: center;
+   margin-bottom: .5em;
+}
+
+#resumeContent .spacer {
+   font-size: 10pt;
+}
+
+#resumeContent .sectionHeader {
+   width: 25%;
+   border-bottom: 1px solid black;
+   font-size: 18pt;
+   font-variant: small-caps;
+}
+
+#resumeContent .entry {
+   clear: both;
+   margin-bottom: 15px;
+   margin-left: 10px;
+}
+
+#resumeContent .entryInfo {
+   height: 25px;
+   font-size: 13pt;
+}
+
+#resumeContent .title {
+   width: 75%;
+   float: left;
+   font-weight: bold;
+}
+
+#resumeContent .duration {
+   width: 25%;
+   float: right;
+   font-size: 10pt;
+   font-style: italic;
+   text-align: right;
+   line-height: 25px;
+}
+
+#resumeContent .description {
+   font-size: 11pt;
+   line-height: 23px;
+   padding-right: 4em;
+}
+
+#resumeContent a {
+   color: black;
+   text-decoration: none;
+}
+#resumeContent ul { margin-left: 28px; font-size: 11pt; line-height: 23px;}
+#resumeContent li { list-style-type: square; }
+
+
+/* eSports */
+
+#videos {
+   margin-bottom: 3em;
+}
+
+.videoEntry {
+   clear: both;
+   margin-top: 1.5em;
+   margin-bottom: 1.5em;
+   margin-left: auto;
+   margin-right: auto;
+   border: 1px solid #000;
+   width: 100%;
+   overflow: hidden;
+}
+
+.videoTitle {
+   text-align: center;
+   font-size: 1.5em;
+   font-weight: bold;
+   width: 100%;
+   border-bottom: 1px solid #000;
+   background-color: #FFE;
+}
+
+.videoDisplay {
+   float: left;
+}
+
+.videoThumb {
+   cursor: pointer;
+   width: 560px;
+   height: 315px;
+}
+
+.video {
+   display: none;
+}
+
+.videoData {
+   width: 170px;
+   float: right;
+   clear: right;
+   padding: 1em;
+}
